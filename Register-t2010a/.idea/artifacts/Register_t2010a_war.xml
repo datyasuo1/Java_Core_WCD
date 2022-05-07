@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Register-t2010a:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Register-t2010a</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Register-t2010a-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Register-t2010a:war exploded" />
+    </root>
+  </artifact>
+</component>
