@@ -1,5 +1,7 @@
 package com.example.customer.entity;
 
+import com.example.customer.util.DateTimeHelper;
+
 import java.time.LocalDateTime;
 
 public class Customer {
@@ -35,7 +37,10 @@ public class Customer {
     }
 
     public Customer(){
-
+        this.Id = "";
+        this.Name = "";
+        this.Phone = "";
+        this.Image = "";
     }
 
     @Override
@@ -114,5 +119,11 @@ public class Customer {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+    public String getDobString() {
+        if(this.DOB != null){
+            return DateTimeHelper.convertLocalDateTimeToString(this.DOB);
+        }
+        return "";
     }
 }

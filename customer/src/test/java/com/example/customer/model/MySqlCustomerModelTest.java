@@ -34,25 +34,25 @@ class MySqlCustomerModelTest {
 
     @Test
     void findById() {
-        Customer student = model.findById("AB1");
-        assertEquals("Dat", student.getName());
-        Student student1 = model.findById("A002");
-        assertEquals("Luyen", student1.getFullName());
+        Customer customer = model.findById("AB1");
+        assertEquals("Dat", customer.getName());
+        Customer customer1 = model.findById("A002");
+        assertEquals("Luyen", customer1.getName());
     }
 
     @Test
     void update() {
-        Student student = model.findById("A001");
-        student.setFullName("Xuan Van Hung");
-        model.update("A001", student);
-        Student newUpdateStudent = model.findById("A001");
-        assertEquals("Xuan Van Hung", newUpdateStudent.getFullName());
+        Customer customer = model.findById("A001");
+        customer.setName("Xuan Van Hung");
+        model.update("A001", customer);
+        Customer newUpdateStudent = model.findById("A001");
+        assertEquals("Xuan Van Hung", newUpdateStudent.getName());
     }
 
     @Test
     void delete() {
         model.delete("A001");
-        Student student = model.findById("A001");
-        assertEquals(null, student);
+        Customer customer = model.findById("A001");
+        assertEquals(null, customer);
     }
 }
