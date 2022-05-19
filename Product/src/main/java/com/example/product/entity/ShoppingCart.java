@@ -101,7 +101,7 @@ public class ShoppingCart implements ShoppingCartAction{
         String itemId = String.valueOf(product.getId());
         if (items.size() == 0){
             items.put(itemId, cart);
-            System.out.println("da san pham ");
+            System.out.println("da them san pham ");
         }else {
             if (items.containsKey(itemId)){
                 System.out.println("san pham ton tai");
