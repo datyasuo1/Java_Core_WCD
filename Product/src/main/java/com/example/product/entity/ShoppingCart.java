@@ -114,30 +114,16 @@ public class ShoppingCart implements ShoppingCartAction{
 
     @Override
     public void update(int quantity, String id) {
-        if (items.containsKey(id)){
-            CartItem updateItem = items.get(id);
-            updateItem.setQuantity(updateItem.getQuantity() + quantity);
-            System.out.println("update thanh cong.");
-        }else {
-            System.out.println("Khong co san pham.");
-        }
+        
     }
 
     @Override
     public void remove(String id) {
-        if (items.containsKey(id)){
-            CartItem findItem = items.get(id);
-            findItem.setQuantity(0);
-            System.out.println("xoa thanh cong.");
-        }else {
-            System.out.println("Khong co san pham.");
-        }
+       
     }
 
     @Override
     public ArrayList<CartItem> getListItems() {
-        ArrayList<CartItem> listCart = new ArrayList<>(items.values());
-
-        return listCart;
+       
     }
 }
