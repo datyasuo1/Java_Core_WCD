@@ -7,7 +7,7 @@ public class CartItem {
     private double unitPrice;
     private int quantity;
 
-    public CartItem() {
+    public CartItem(int id, String name, String thumbnail, double price, int quantity) {
     }
 
     public int getProductId() {
