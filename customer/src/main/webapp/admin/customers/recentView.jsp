@@ -1,11 +1,13 @@
 <%@ page import="com.example.customer.entity.Customer" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <%@ page contentType="text/html;charset=UTF-8" language="java" %>
     <%
-        List<Customer> listCustomer = (List<Customer>)request.getAttribute("listCustomer");
+        ArrayList<Customer> recentView = (ArrayList<Customer>)request.getAttribute("listCustomer");
+
     %>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,7 +50,7 @@
                     <div class="col-12">
                         <!-- /.card -->
                         <a href="/admin/customers/create">Create new customer</a>
-                        <a href="/admin/customers/recentview">Recent View customer</a>
+                        <a href="/admin/customers/recentView.jsp">Recent View customer</a>
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">List Customer</h3>
@@ -64,10 +66,9 @@
                                         <th>Phone</th>
                                         <th>Image</th>
                                         <th>DOB</th>
-                                        <th>Action</th>
                                     </tr>
                                     </thead>
-                                    <%for (Customer st : listCustomer) {
+                                    <%for (Customer st : recentView) {
                                     %>
                                     <tbody>
 
@@ -76,9 +77,6 @@
                                     <th><%=st.getPhone()%></th>
                                     <th><%=st.getImage()%></th>
                                     <th><%=st.getDobString()%></th>
-                                    <th><a href="/admin/customers/detail?id=<%=st.getId()%>">Detail</a>&nbsp;&nbsp;
-                                        <a href="/admin/customers/edit?id=<%=st.getId()%>">Edit</a>&nbsp;&nbsp;
-                                        <a href="/admin/customers/delete?id=<%=st.getId()%>" onclick="return confirm('Are you sure?')">Delete</a></th>
 
                                     </tbody>
                                     <%}%>
@@ -89,7 +87,6 @@
                                         <th>Phone</th>
                                         <th>Image</th>
                                         <th>DOB</th>
-                                        <th>Action</th>
                                     </tr>
                                     </tfoot>
 

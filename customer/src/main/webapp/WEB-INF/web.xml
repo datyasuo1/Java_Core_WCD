@@ -43,4 +43,12 @@
         <servlet-name>DeleteCustomerServlet</servlet-name>
         <url-pattern>/admin/customers/delete</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>RecentViewCustomerServlet</servlet-name>
+        <servlet-class>com.example.customer.controller.RecentViewCustomerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RecentViewCustomerServlet</servlet-name>
+        <url-pattern>/admin/customers/recentview</url-pattern>
+    </servlet-mapping>
 </web-app>

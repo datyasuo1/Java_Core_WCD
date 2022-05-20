@@ -10,17 +10,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
-public class ListCustomerServlet extends HttpServlet {
+public class RecentViewCustomerServlet extends HttpServlet {
     private CustomerModel customerModel;
-    public ListCustomerServlet(){
+    public RecentViewCustomerServlet(){
         this.customerModel = new MySqlCustomerModel();
     }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Customer> list =customerModel.findAll();
+        HttpSession session = req.getSession();
+        List<Customer> list = (ArrayList<Customer>) session.getAttribute("recentView");
+        if (list == null){
+            list = new ArrayList<>();
+        }
         req.setAttribute("listCustomer", list);
-        req.getRequestDispatcher("/admin/customers/list.jsp").forward(req,resp);
+        System.out.println("Hello");
+        req.getRequestDispatcher("/admin/customers/recentView.jsp").forward(req,resp);
     }
 }
