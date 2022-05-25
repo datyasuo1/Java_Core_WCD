@@ -63,9 +63,10 @@
                                     <div class="form-group">
                                         <label for="Id">Id</label>
                                         <input type="tel" name="Id" class="form-control" id="Id" value="<%=customer.getId()%>" <%=action == 2 ?"readonly":""%>>
-                                    </div><div class="form-group">
-                                    <label for="Name">Full Name</label>
-                                    <input type="text" name="Name" class="form-control" id="Name" value="<%=customer.getName()%>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Name">Full Name</label>
+                                        <input type="text" name="Name" class="form-control" id="Name" value="<%=customer.getName()%>">
                                 </div>
                                     <div class="form-group">
                                         <label for="Phone">Phone</label>
@@ -101,6 +102,18 @@
     </div>
     <!-- /.content-wrapper -->
     <jsp:include page="../includes/footer.jsp"></jsp:include>
+    <script>
+        $(function () {
+            // Summernote
+            $('#summernote').summernote()
+
+            // CodeMirror
+            CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+                mode: "htmlmixed",
+                theme: "monokai"
+            });
+        })
+    </script>
 
     <!-- Control Sidebar -->
 
