@@ -27,7 +27,6 @@ public class RecentViewCustomerServlet extends HttpServlet {
             list = new ArrayList<>();
         }
         req.setAttribute("listCustomer", list);
-        System.out.println("Hello");
         req.getRequestDispatcher("/admin/customers/recentView.jsp").forward(req,resp);
     }
 }
