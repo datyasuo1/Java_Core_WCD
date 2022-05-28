@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Karma_Shops:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Karma_Shops</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Karma_Shops-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Karma_Shops:war exploded" />
+    </root>
+  </artifact>
+</component>

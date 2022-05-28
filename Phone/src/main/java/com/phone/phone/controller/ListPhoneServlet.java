@@ -28,7 +28,7 @@ public class ListPhoneServlet extends HttpServlet {
         List<Brand> listB = brandModel.findAll();
         request.setAttribute("title","List Phone");
         request.setAttribute("list",list);
-        request.setAttribute("list1",listB);
+        request.setAttribute("listB",listB);
         request.getRequestDispatcher("/admin/products/list.jsp").forward(request,response);
     }
 }

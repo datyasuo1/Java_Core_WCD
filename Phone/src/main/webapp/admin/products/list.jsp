@@ -14,9 +14,9 @@
     if (list==null){
         list = new ArrayList<>();
     }
-    List<Brand> list1 = (List<Brand>)request.getAttribute("list1");
-    if (list1==null){
-        list1 = new ArrayList<>();
+    List<Brand> listB = (List<Brand>)request.getAttribute("listB");
+    if (listB==null){
+        listB = new ArrayList<>();
     }
 %>
 <!DOCTYPE html>
@@ -70,7 +70,7 @@
                                     <tr>
                                         <th><%=pr.getId()%></th>
                                         <td><%=pr.getName()%></td>
-                                        <td><%=list1.get(2).getName()%></td>
+                                        <td><%=listB.get(2).getName()%></td>
                                         <td><%=pr.getPrice()%></td>
                                         <td >
                                         <%=pr.getDescription()%>
